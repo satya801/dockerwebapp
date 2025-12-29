@@ -2,15 +2,17 @@
 version: "3"
 services:
  devopsdb:
-   container_name: devopsdb
-   image: shaikmustafa/valluri:dbimage
+   image: satya678/mynewrepo:dbimage
    ports:
-     - "3306:3306"
+     - "3306"
+   deploy:
+   replicas: 3
 
  application:
-   image: shaikmustafa/valluri:appimage
-   container_name: containerapp
+   image: satya678/mynewrepo:appimage
    ports:
-     - "1234:8080"
+     - "8080"
+   deploy:
+   replicas: 3
    depends_on:
      - "devopsdb"
