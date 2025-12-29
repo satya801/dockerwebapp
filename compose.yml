@@ -1,18 +1,17 @@
----
 version: "3"
 services:
- devopsdb:
-   image: satya678/mynewrepo:dbimage
-   ports:
-     - "3306"
-   deploy:
-   replicas: 3
+  devopsdb:
+    image: satya678/mynewrepo:dbimage
+    ports:
+      - "3306"
+    deploy:
+      replicas: 3
 
- application:
-   image: satya678/mynewrepo:appimage
-   ports:
-     - "8080"
-   deploy:
-   replicas: 3
-   depends_on:
-     - "devopsdb"
+  application:
+    image: satya678/mynewrepo:appimage
+    ports:
+      - "8080"
+    deploy:
+      replicas: 3
+    depends_on:
+      - devopsdb
