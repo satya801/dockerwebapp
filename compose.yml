@@ -10,7 +10,7 @@ services:
   application:
     image: satya678/mynewrepo:appimage
     ports:
-      - "8080"
+      - "1111:8080"
     deploy:
       replicas: 3
     depends_on:
